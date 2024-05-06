@@ -19,23 +19,23 @@ export class App extends Component {
     filter: '',
   };
 
-  // componentDidMount() {
-  //   const myContacts = JSON.parse(localStorage.getItem('contacts'));
-  //   if (myContacts) {
-  //     this.setState({ contacts: myContacts });
-  //   }
-  // }
-
   componentDidMount() {
-    if (
-      JSON.parse(localStorage.getItem('contacts')) !== this.state.contacts ??
-      0
-    ) {
-      return this.setState({
-        contacts: JSON.parse(localStorage.getItem('contacts')),
-      });
+    const myContacts = JSON.parse(localStorage.getItem('contacts'));
+    if (myContacts) {
+      this.setState({ contacts: myContacts });
     }
   }
+
+  // componentDidMount() {
+  //   if (
+  //     JSON.parse(localStorage.getItem('contacts')) !== this.state.contacts ??
+  //     0
+  //   ) {
+  //     return this.setState({
+  //       contacts: JSON.parse(localStorage.getItem('contacts')),
+  //     });
+  //   }
+  // }
 
   componentDidUpdate(_, prevState) {
     const { contacts } = this.state;
