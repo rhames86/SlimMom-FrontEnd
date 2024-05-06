@@ -1,0 +1,84 @@
+.box {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  width: 390px;
+  margin: 0 auto;
+  padding: 14px;
+
+  font-size: 14px;
+
+  background-color: rgba(245, 244, 250, 1);
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+}
+
+.contactList {
+  margin-bottom: 12px;
+  background-color: #fff;
+}
+
+.title_comp {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.list {
+  margin-left: 16px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.item_text {
+  margin-right: 12px;
+}
+
+.input {
+  display: block;
+  width: 160px;
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.btn_del {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+  min-width: 70px;
+
+  padding: 2px 10px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  background-color: lightgrey;
+  border: 0 transparent;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgb(0 0 0 / 10%);
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn_del:hover,
+.btn_del:focus {
+  color: aliceblue;
+  background-color: tomato;
+}
