@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.button-addCart {
+  background-color: rgb(0, 191, 255);
+  color: rgb(255, 255, 255);
+  border: none;
+  width: 90px;
+  margin-bottom: 50px;
+  border-radius: 20%;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  width: 600px;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  height: 50vh;
+}
