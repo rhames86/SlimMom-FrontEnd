@@ -1,59 +1,70 @@
-import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getUser, refreshUser } from 'redux/auth/auth-operations';
+import { Route, Routes } from 'react-router-dom';
+import { PublicRoute } from './PublicRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { Layout } from './Layout/Layout';
+import 'react-toastify/dist/ReactToastify.css';
+import { getIsRefreshing } from 'redux/auth/auth-selectors';
+import { ThemeSwitching } from './styles/ThemeSwitching';
+import { useAuth } from 'hooks';
+import { dayInfo } from 'redux/day/day-operations';
+import { GlobalStylesPrivate } from './styles/GlobalStylePrivate.styled';
+import { GlobalStylePublic } from './GlobalStylePublic/GlobalStylePublic.styled';
+import Loader from './Loader/Loader';
+import Login from 'pages/Login';
+import Register from 'pages/Register';
+import Home from 'pages/Home';
 
-function App() {
+import PageNotFound from './PageNotFound/PageNotFound';
+
+export const App = () => {
+  const { isLoggedIn } = useAuth();
+  const dispatch = useDispatch();
+  const normalizedSelectedDate = new Date().toISOString().split('T')[0];
+  useEffect(() => {
+    dispatch(refreshUser())
+      .unwrap()
+      .then(() => dispatch(getUser()))
+      .then(() => dispatch(dayInfo({ date: normalizedSelectedDate })));
+  }, [dispatch, normalizedSelectedDate]);
+
+  const isRefreshing = useSelector(getIsRefreshing);
+
   return (
-    <div className="App">
-      <h1>Hola Somos el Grupo 1 | SlimMom Project</h1>
-      <h2>Integrantes:</h2>
-      <ul>
-        <li>
-          <b>Alejandro Garcia Salazar</b>
-        </li>
-        <li>
-          <b>Alejandro Largo T</b>
-        </li>
-        <li>
-          <b>Andres Jordan Andres Jordan</b>
-        </li>
-        <li>
-          <b>Eduardo José Maya Rodriguez</b>
-        </li>
-        <li>
-          <b>Francis Ortega</b>
-        </li>
-        <li>
-          <b>Jessica Gargurevich</b>
-        </li>
-        <li>
-          <b>Johan Devia</b>
-        </li>
-        <li>
-          <b>Jonathan Pabón</b>
-        </li>
-        <li>
-          <b>Juan Batista</b>
-        </li>
-        <li>
-          <b>Juan Urbina</b>
-        </li>
-        <li>
-          <b>Leider Páez</b>
-        </li>
-        <li>
-          <b>Mayra Alejandra Madera</b>
-        </li>
-        <li>
-          <b>Nicolas Camelo Gomez</b>
-        </li>
-        <li>
-          <b>Nicolas Canales Diaz</b>
-        </li>
-        <li>
-          <b>Sandra Echeverri</b>
-        </li>
-      </ul>
-    </div>
+    <ThemeSwitching>
+      {isRefreshing ? (
+        <Loader />
+      ) : (
+        <>
+          {isLoggedIn ? <GlobalStylesPrivate /> : <GlobalStylePublic />}
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route
+                path="/registration"
+                element={
+                  <PublicRoute restricted>
+                    <Register />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <PublicRoute restricted>
+                    <Login />
+                  </PublicRoute>
+                }
+              />
+              <Route path="/diary" element={<PrivateRoute></PrivateRoute>} />
+              <Route path="*" element={<PageNotFound />} />
+            </Route>
+          </Routes>
+          {/* </Suspense> */}
+        </>
+      )}
+    </ThemeSwitching>
   );
-}
-
-export default App;
+};
