@@ -35,17 +35,10 @@ import { ThemeTogle } from 'pages/Login/ThemeTogle';
 
 import logoDark1x from 'images/header/logoDark1x.png';
 import logoDark2x from 'images/header/logoDark2x.png';
-import logoDarkWebp1x from 'images/header/logoDarkWebp1x.webp';
-import logoDarkWebp2x from 'images/header/logoDarkWebp2x.webp';
-import logoDarkAvif1x from 'images/header/logoDarkAvif1x.avif';
-import logoDarkAvif2x from 'images/header/logoDarkAvif2x.avif';
 
 import logoLight1x from 'images/header/logoLight1x.png';
 import logoLight2x from 'images/header/logoLight2x.png';
-import logoLightWebp1x from 'images/header/logoLightWebp1x.webp';
-import logoLightWebp2x from 'images/header/logoLightWebp2x.webp';
-import logoLightAvif1x from 'images/header/logoLightAvif1x.avif';
-import logoLightAvif2x from 'images/header/logoLightAvif2x.avif';
+
 // import { BsDisplay } from 'react-icons/bs';
 
 function Header() {
@@ -82,18 +75,6 @@ function Header() {
             {selectedTheme === 'light' ? (
               <LogoImg>
                 <source
-                  srcSet={logoDarkAvif2x}
-                  type="image/avif"
-                  media="(min-resolution: 2dppx)"
-                />
-                <source srcSet={logoDarkAvif1x} type="image/avif" />
-                <source
-                  srcSet={logoDarkWebp2x}
-                  type="image/webp"
-                  media="(min-resolution: 2dppx)"
-                />
-                <source srcSet={logoDarkWebp1x} type="image/webp" />
-                <source
                   srcSet={logoDark2x}
                   type="image/png"
                   media="(min-resolution: 2dppx)"
@@ -103,18 +84,6 @@ function Header() {
               </LogoImg>
             ) : (
               <LogoImg>
-                <source
-                  srcSet={logoLightAvif2x}
-                  type="image/avif"
-                  media="(min-resolution: 2dppx)"
-                />
-                <source srcSet={logoLightAvif1x} type="image/avif" />
-                <source
-                  srcSet={logoLightWebp2x}
-                  type="image/webp"
-                  media="(min-resolution: 2dppx)"
-                />
-                <source srcSet={logoLightWebp1x} type="image/webp" />
                 <source
                   srcSet={logoLight2x}
                   type="image/png"
@@ -140,18 +109,6 @@ function Header() {
             {selectedTheme === 'light' ? (
               <LogoImg>
                 <source
-                  srcSet={logoDarkAvif2x}
-                  type="image/avif"
-                  media="(min-resolution: 2dppx)"
-                />
-                <source srcSet={logoDarkAvif1x} type="image/avif" />
-                <source
-                  srcSet={logoDarkWebp2x}
-                  type="image/webp"
-                  media="(min-resolution: 2dppx)"
-                />
-                <source srcSet={logoDarkWebp1x} type="image/webp" />
-                <source
                   srcSet={logoDark2x}
                   type="image/png"
                   media="(min-resolution: 2dppx)"
@@ -161,18 +118,6 @@ function Header() {
               </LogoImg>
             ) : (
               <LogoImg>
-                <source
-                  srcSet={logoLightAvif2x}
-                  type="image/avif"
-                  media="(min-resolution: 2dppx)"
-                />
-                <source srcSet={logoLightAvif1x} type="image/avif" />
-                <source
-                  srcSet={logoLightWebp2x}
-                  type="image/webp"
-                  media="(min-resolution: 2dppx)"
-                />
-                <source srcSet={logoLightWebp1x} type="image/webp" />
                 <source
                   srcSet={logoLight2x}
                   type="image/png"

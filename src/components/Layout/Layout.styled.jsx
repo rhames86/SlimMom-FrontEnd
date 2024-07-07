@@ -40,7 +40,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
   }
   @media screen and (min-width: 1280px) {
-    padding-top: 140px;
+    padding-top: 68px;
     display: flex;
   }
 `;
