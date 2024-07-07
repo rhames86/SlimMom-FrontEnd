@@ -16,7 +16,8 @@ import Loader from './Loader/Loader';
 import Login from 'pages/Login';
 import Register from 'pages/Register';
 import Home from 'pages/Home';
-
+import Calculator from 'pages/Calculator';
+import Diary from 'pages/Diary';
 import PageNotFound from './PageNotFound/PageNotFound';
 
 export const App = () => {
@@ -58,7 +59,22 @@ export const App = () => {
                   </PublicRoute>
                 }
               />
-              <Route path="/diary" element={<PrivateRoute></PrivateRoute>} />
+              <Route
+                path="/calculator"
+                element={
+                  <PrivateRoute>
+                    <Calculator />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/diary"
+                element={
+                  <PrivateRoute>
+                    <Diary />
+                  </PrivateRoute>
+                }
+              />
               <Route path="*" element={<PageNotFound />} />
             </Route>
           </Routes>
