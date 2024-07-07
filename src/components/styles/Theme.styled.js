@@ -11,8 +11,8 @@ export const light = {
     buttonTextHover: '#E0E0E0',
     button: '#FC842D',
     buttonHover: '#F75F2A',
-    shadowButton: 'rgba(252, 132, 45, 0.5)',
-    shadowButtonHover: 'rgba(202,105,34,0.75)',
+    shadowButton: '0px 4px 10px rgba(252, 132, 45, 0.5)',
+    shadowButtonHover: '0px 4px 10px rgba(252, 132, 45, 0.5)',
 
     inputText: '#202025',
     borderInput: '#E0E0E0',
@@ -39,17 +39,17 @@ export const dark = {
   colors: {
     switcherOn: '#FFFFFF',
     firstText: '#DDDDDD',
-    secondText: 'rgba(236,236,236,0.5)',
+    secondText: 'rgb(250,250,250)',
 
     buttonBackground: '#36363A',
-    buttonText: 'rgba(255,255,255,0.8)',
+    buttonText: 'rgba(255,255,255,0.8)', // Cambio
     buttonTextHover: '#3B3B3B',
-    button: '#FF6B00',
-    buttonHover: '#EE4A10',
-    shadowButton: 'rgba(255,107,0,0.75)',
-    shadowButtonHover: 'rgba(203,86,0,0.3)',
+    button: '#18CA1F', //Cambio
+    buttonHover: '#14A21A', //Cambio
+    shadowButton: '0px 4px 10px rgba(250, 250, 250, 0.5)',
+    shadowButtonHover: '0px 4px 10px rgba(250, 250, 250, 0.5)',
 
-    inputText: '#EE4A10',
+    inputText: '#FFFFFF',
     borderInput: 'rgba(236,236,236,0.3)',
     borderLight: 'rgba(255, 219, 193, 0.5)',
     borderActive: '#DDDDDD',
@@ -59,7 +59,7 @@ export const dark = {
       'linear-gradient(90deg, rgba(54,54,58,1) 60%, rgba(74,74,77,1) 60%)',
     backgroundGradientTablet:
       'linear-gradient(180deg, rgba(54,54,58,1) 68%, rgba(74,74,77,1) 68%)',
-    background: '#36363A',
+    background: 'rgba(0,0,0,0.9)', // Cambio
     backroundSecond: '#5F5F5F',
     backroundBurger: '#36363A',
     backgroundMobile: '#737373',

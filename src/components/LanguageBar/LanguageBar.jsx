@@ -138,6 +138,11 @@ const LanguageBar = ({ big }) => {
               width={big ? 48 : 24}
               height={big ? 32 : 16}
             />
+            <IconStyled
+              icon="do"
+              width={big ? 48 : 24}
+              height={big ? 32 : 16}
+            />
             &nbsp;Espanol
           </ListItem>
         </List>

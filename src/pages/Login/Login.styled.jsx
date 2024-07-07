@@ -55,7 +55,7 @@ export const StyledBtnAuthAccent = styled.button`
   letter-spacing: 0.04em;
   color: ${({ theme }) => theme.colors.buttonText};
   background: ${({ theme }) => theme.colors.button};
-  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  box-shadow: ${({ theme }) => theme.colors.shadowButton};
   border-radius: 30px;
   transition: background-color 250ms linear;
   &:hover,
@@ -84,7 +84,7 @@ export const StyledLinkAuth = styled(Link)`
   transition: background-color 250ms linear, color 250ms linear;
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.colors.shadowButtonHover};
+    background-color: ${({ theme }) => theme.colors.shadowButton};
     color: ${({ theme }) => theme.colors.buttonText};
   }
 `;
