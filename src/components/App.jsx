@@ -16,6 +16,7 @@ import Loader from './Loader/Loader';
 import Login from 'pages/Login';
 import Register from 'pages/Register';
 import Home from 'pages/Home';
+import DiaryCalculator from './DiaryCalculator/DiaryCalculator';
 
 import PageNotFound from './PageNotFound/PageNotFound';
 
@@ -58,7 +59,7 @@ export const App = () => {
                   </PublicRoute>
                 }
               />
-              <Route path="/diary" element={<PrivateRoute></PrivateRoute>} />
+              <Route path="/diary" element={<PublicRoute><DiaryCalculator /></PublicRoute>} />
               <Route path="*" element={<PageNotFound />} />
             </Route>
           </Routes>
