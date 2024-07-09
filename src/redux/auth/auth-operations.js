@@ -3,10 +3,10 @@ import { instance, setToken, clearToken } from 'config';
 import { toast } from 'react-toastify';
 
 export const register = createAsyncThunk(
-  '/users/signup',
+  'auth/register',
   async (body, { rejectWithValue }) => {
     try {
-      const user = await instance.post('/users/signup', body);
+      const user = await instance.post('/auth/register', body);
       // toast(`Welcome ${user.data.username}`);
       return user.data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const logIn = createAsyncThunk(
   'auth/login',
   async (body, { rejectWithValue }) => {
     try {
-      const user = await instance.post('/users/login', body);
+      const user = await instance.post('/auth/login', body);
       setToken(user.data.accessToken);
       toast.success(`Hello, ${user.data.user.username}`);
       return user.data;
@@ -40,10 +40,10 @@ export const logIn = createAsyncThunk(
 );
 
 export const logOut = createAsyncThunk(
-  'users/logout',
+  'auth/logout',
   async (_, { rejectWithValue }) => {
     try {
-      await instance.post('users/logout');
+      await instance.post('/auth/logout');
       clearToken();
     } catch (error) {
       return rejectWithValue(error.message);

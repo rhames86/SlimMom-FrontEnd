@@ -32,11 +32,11 @@ import {
 } from './CalculatorCalorieForm.styled.jsx';
 
 let schema = yup.object({
-  weight: yup.number().min(20).max(500),
-  height: yup.number().min(100).max(250),
-  age: yup.number().min(18).max(100),
-  desiredWeight: yup.number().min(20).max(500),
-  bloodType: yup.number(),
+  weight: yup.number().min(20).max(500).required('Please enter data'),
+  height: yup.number().min(100).max(250).required('Please enter data'),
+  age: yup.number().min(18).max(100).required('Please enter age'),
+  desiredWeight: yup.number().min(20).max(500).required('Please enter data'),
+  bloodType: yup.number().required('Please select your blood type'),
 });
 
 function CalculatorCalorieForm() {
@@ -48,11 +48,11 @@ function CalculatorCalorieForm() {
   const isModalOpen = useSelector(getIsModalOpen);
 
   const startValue = {
-    weight: userData.weight || userCalcData.weight,
-    height: userData.height || userCalcData.height,
-    age: userData.age || userCalcData.age,
-    desiredWeight: userData.desiredWeight || userCalcData.desiredWeight,
-    bloodType: userData.bloodType || userCalcData.bloodType,
+    weight: userData.weight || userCalcData.weight || ``,
+    height: userData.height || userCalcData.height || ``,
+    age: userData.age || userCalcData.age || ``,
+    desiredWeight: userData.desiredWeight || userCalcData.desiredWeight || ``,
+    bloodType: userData.bloodType || userCalcData.bloodType || ``,
   };
 
   const handleSubmit = (values, { resetForm }) => {

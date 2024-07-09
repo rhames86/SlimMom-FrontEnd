@@ -21,7 +21,6 @@ export const Form = styled.form`
     display: flex;
     flex-direction: row;
     padding-top: 0;
-  
   }
 `;
 
@@ -83,7 +82,7 @@ export const InputGrams = styled.input`
 
   @media (min-width: ${breakpoints.mobile}) {
     width: 280px;
-
+    margin-right: 50px;
     text-align: left;
   }
 

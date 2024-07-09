@@ -143,7 +143,7 @@ const LanguageBar = ({ big }) => {
               width={big ? 48 : 24}
               height={big ? 32 : 16}
             />
-            &nbsp;Espanol
+            &nbsp;Español
           </ListItem>
         </List>
       )}

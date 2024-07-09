@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'https://goit-final-project-gr-01-backend.onrender.com/api',
+  baseURL: 'https://slimmom-backend.goit.global/',
 });
 export const setToken = token => {
   instance.defaults.headers.common.Authorization = `Bearer ${token}`;
